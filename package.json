@@ -1,0 +1,10 @@
+{
+  "name": "advent-of-js-challenge-2021",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:/Alkamenos/advent-of-js-challenge-2021.git",
+  "author": "Leonid Artemev <alkamenos@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["javascript/*"]
+}
