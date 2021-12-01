@@ -1,7 +1,7 @@
 import './App.css';
 import settingsIcon from './images/gear.svg'
 import alert from './sounds/alert.ogg'
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState} from "react";
 import dayjs from "dayjs";
 import classnames from "classnames";
 
@@ -17,17 +17,6 @@ function App() {
 		{isRest: true, duration: 15 * 1000 * 60},
 		{isRest: false, duration: 25 * 1000 * 60}
 	];
-
-	useEffect(() => {
-		if (!isRunning) {
-			clearInterval(timer)
-		} else {
-			startInterval();
-		}
-		return () => {
-			clearInterval(timer)
-		}
-	}, [isRunning])
 
 	let timer;
 	const toggleRunStop = () => {
@@ -54,12 +43,28 @@ function App() {
 		}
 	}
 
+
 	if (isRunning && currentTime <= 0) {
 		clearInterval(timer)
 		setIsRunning(false);
 		setCurrentTime(time);
 		audioEl.current.play();
 	}
+
+	useEffect(() => {
+		console.log(isRunning)
+		if (isRunning) {
+			startInterval();
+		} else {
+
+			clearInterval(timer)
+
+		}
+		return () => {
+			clearInterval(timer)
+		}
+	}, [isRunning])
+
 
 	const r = 255
 	const progress = currentTime / time * 1595
@@ -99,7 +104,7 @@ function App() {
 					</div>
 				</div>
 			</div>
-			<audio src={alert} preload ref={audioEl}/>
+			<audio src={alert} ref={audioEl}/>
 		</div>
 	);
 }
