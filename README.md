@@ -2,4 +2,4 @@
 Тут я буду выкладывать свои варианты решения задач из `#adventofjs` `#adventofcss`
 Ссылка на контест - https://www.adventofjs.com
 
-![img.png](img.png)
+![thumbnail.png](thumbnail.png)
