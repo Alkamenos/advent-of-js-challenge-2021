@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+@font-face {
+    font-family: "bebas";
+    src: url('./fonts/bebasneue-book-webfont.woff') format('woff'),
+    url('./fonts/bebasneue-book-webfont.woff2') format('woff2');
+}
+
+:root {
+    --red: #9d0000;
+    --dark-red: #900A0A;
+    --green: #00aa51;
+    --background: #2B2A30;
+    --radius: 518px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "bebas", serif;
+}
+
+body {
+    background-color: var(--background);
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pomodoro-timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--radius);
+    height: var(--radius);
+    position: relative;
+}
+
+.pomodoro-timer:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--background);
+    border-radius: 50%;
+    box-shadow: 5px -16px 50px 0 rgba(255, 255, 255, 0.15);
+}
+
+.pomodoro-timer__body {
+    background: radial-gradient(71.4% 71.4% at 51.7% 28.6%, #3A393F 0%, #17171A 100%);
+    box-shadow: inset 0 0 114px rgba(0, 0, 0, 0.45);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pomodoro-timer__progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 9px;
+}
+
+.pomodoro-timer__progress svg {
+    transform: rotate(180deg);
+}
+
+._red path {
+    stroke: var(--red);
+}
+
+._green path {
+    stroke: var(--green);
+}
+
+.pomodoro-timer__time {
+    font-size: 196px;
+    color: #fff;
+}
+
+.pomodoro-timer__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pomodoro-timer__controls .settings-button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    opacity: 0.6;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+    text-align: center;
+}
+
+.pomodoro-timer__controls .settings-button:hover {
+    opacity: 1;
+}
+
+
+
