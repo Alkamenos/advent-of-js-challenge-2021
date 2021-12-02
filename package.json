@@ -17,7 +17,7 @@
         "lint:js": "eslint . --ext .js --ignore-pattern lib --ignore-pattern node_modules",
         "lint:styles": "stylelint './packages/**/*.js'",
         "lint": "yarn lint:js && yarn lint:styles",
-        "now-build": "build-storybook -c .storybook -o public",
+        "now-build": "build-storybook -c .storybook -o build",
         "prettier": "prettier --write \"**/*.{js,json,md,yml}\"",
         "lerna-publish": "lerna publish",
         "test": "yarn build && yarn lint && yarn coverage",
