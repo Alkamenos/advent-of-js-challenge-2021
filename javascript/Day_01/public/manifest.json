@@ -1,8 +1,0 @@
-{
-  "short_name": "Advent Javascript 2021",
-  "name": "Advent Javascript 2021 by Leonid Artemev",
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
-}
