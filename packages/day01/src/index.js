@@ -2,7 +2,6 @@ import React, {useEffect, useRef, useState} from 'react';
 import settingsIcon from '../../../public/images/gear.svg';
 import dayjs from 'dayjs';
 import classnames from 'classnames';
-import '../../../public/index.css';
 import './Pomodoro.css';
 
 function PomodoroTimer() {
@@ -66,7 +65,7 @@ function PomodoroTimer() {
     const progress = (currentTime / time) * 1595;
 
     return (
-        <div className="App">
+        <div className="Pomodoro-App">
             <div className="Pomodoro-timer">
                 <div className={classnames('Pomodoro-timer__progress', isRest ? '_green' : '_red')}>
                     <svg height={r * 2 + 10} viewBox={`0 0 ${r * 2 + 10} ${r * 2 + 10}`} width={r * 2 + 10}>

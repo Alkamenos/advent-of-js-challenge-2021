@@ -1,0 +1,82 @@
+.Menu-Item {
+    display: flex;
+    height: 9.5rem;
+    position: relative;
+}
+
+
+.Menu-Item__plate {
+    width: 9.3rem;
+    transform: translate(-1rem, -1rem);
+}
+
+.Menu-Item__card {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+}
+
+.Menu-Item__name {
+    font-size: 1.125rem;
+    line-height: 20px;
+    margin: 0 0 16px 0;
+    padding: 0;
+}
+
+.Menu-Item__price {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: bold;
+}
+
+.Menu-Item__add-button {
+    transform: translate(0px, 18px);
+    background: #6B00F5;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 4px 18px;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 130px;
+}
+
+.Menu-Item__add-button._in-cart{
+    background-color: #000;
+}
+
+.Menu-Item:before {
+    background: var(--background);
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.Menu-Item:nth-child(4n + 1):before {
+    --background: #e1f1fe
+}
+
+.Menu-Item:nth-child(4n + 2):before {
+    --background: #ffe2f0
+}
+
+.Menu-Item:nth-child(4n + 3):before {
+    --background: #f7f7fe
+}
+
+.Menu-Item:nth-child(4n + 4):before {
+    --background: #defef0
+}
+

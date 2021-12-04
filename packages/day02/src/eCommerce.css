@@ -1,111 +1,16 @@
-.Pomodoro-timer {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.eCommerce-App {
+    background: url('images/bg__left.svg') left 10% no-repeat, url('images/bg__top-right.svg') right top no-repeat, #EFF0F6 url('images/bg__btm-right.svg') right bottom no-repeat;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    min-width: 100vw;
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: var(--radius);
-    height: var(--radius);
-    position: relative;
-}
-
-.Pomodoro-timer:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--background);
-    border-radius: 50%;
-    box-shadow: 5px -16px 50px 0 rgba(255, 255, 255, 0.15);
-}
-
-.Pomodoro-timer__body {
-    background: radial-gradient(71.4% 71.4% at 51.7% 28.6%, #3A393F 0%, #17171A 100%);
-    box-shadow: inset 0 0 114px rgba(0, 0, 0, 0.45);
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 2;
-}
-
-.Pomodoro-timer__progress {
-    position: absolute;
-    /*left: 0;*/
-    /*top: 0;*/
-    fill: none;
-    stroke-linecap: round;
-    stroke-width: 9px;
-    /*z-index: 1;*/
-}
-
-.Pomodoro-timer__progress svg {
-    transform: rotate(180deg);
-}
-
-._red {
-    stroke: var(--dark-red);
-}
-
-._green {
-    stroke: var(--green);
-}
-
-.Pomodoro-timer__time {
-    font-size: 196px;
-    color: #fff;
-}
-
-.Pomodoro-timer__controls {
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
-.Pomodoro-timer__controls .Settings-button {
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    color: #fff;
-    opacity: 0.6;
-    text-transform: uppercase;
-
-    letter-spacing: 10px;
-    text-align: center;
+.eCommerce-App> div+div{
+    margin-left: 50px;
 }
 
-.Pomodoro-timer__controls .Settings-button + .Settings-button {
-    margin-top: 20px;
-}
-
-.Pomodoro-timer__controls .Settings-button:hover {
-    opacity: 1;
-}
-
-.Pomodoro-timer__popup {
-    position: absolute;
-    bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.Pomodoro-timer__popup li {
-    color: #fff;
-    cursor: pointer;
-    opacity: 0.6;
-
-}
-
-.Pomodoro-timer__popup li:hover {
-    opacity: 1;
-}
-
-.Pomodoro-timer__popup li + li {
-    margin-top: 5px;
-}

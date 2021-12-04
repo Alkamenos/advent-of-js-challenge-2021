@@ -4,7 +4,7 @@ import Component from '.';
 
 export default {
     component: Component,
-    title: 'AdventJS/Day01'
+    title: 'AdventJS/Day02'
 };
 
-export const PomodoroTimer = () => <Component />;
+export const eCommerce = () => <Component />;

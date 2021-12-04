@@ -1,0 +1,41 @@
+.Cart{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.Cart li {
+    border-bottom: 1px solid #D7D7F9;
+    padding-bottom: 45px;
+}
+
+.Cart li:last-child {
+    border-bottom: 5px solid #D7D7F9;
+
+}
+
+.Cart li+li{
+   margin-top: 45px;
+}
+
+.Cart__total {
+    padding:20px;
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+.Cart__total li{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.Cart__total li p {
+    margin-right: 25px;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.Cart__total .__purple {
+    color: #6B00F5;
+}
+

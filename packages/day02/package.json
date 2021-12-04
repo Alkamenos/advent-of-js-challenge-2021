@@ -1,21 +1,23 @@
 {
-    "name": "@alkamenos/pomodoro-timer",
+    "name": "@alkamenos/e-commerce",
     "version": "1.0.0",
     "main": "lib/index.js",
     "module": "src/index.js",
     "dependencies": {
+        "classnames": "2.3.1",
         "prop-types": "15.7.2",
         "react": "16.13.1",
-        "react-dom": "16.13.1",
-        "styled-components": "5.2.0",
-        "classnames": "2.3.1",
-        "dayjs": "1.10.7"
+        "react-dom": "16.13.1"
     },
     "peerDependencies": {
-        "react": "^16.0.0",
-        "react-dom": "^16.0.0",
-        "styled-components": "^5.0.0",
         "classnames": "^2.3.1",
-        "dayjs": "^1.10.7"
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.2.5",
+        "postcss": "^8.2.8",
+        "tailwindcss": "^2.2.19",
+        "@tailwindcss/postcss7-compat": "^2.2.17"
     }
 }

@@ -1,0 +1,9 @@
+.Menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.Menu li+li{
+   margin-top: 2rem;
+}
+

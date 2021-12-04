@@ -1,10 +1,13 @@
 {
-    "name": "advent-of-js-challenge-2021",
+    "name": "@alkamenos/advent-of-js-challenge-2021",
     "version": "1.0.0",
     "repository": "git@github.com:/Alkamenos/advent-of-js-challenge-2021.git",
     "author": "Leonid Artemev <alkamenos@gmail.com>",
     "license": "MIT",
     "private": true,
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
     "workspaces": [
         "packages/*"
     ],
@@ -39,16 +42,25 @@
         "@babel/core": "7.11.6",
         "@babel/preset-env": "7.11.5",
         "@babel/preset-react": "7.10.4",
+        "@storybook/addon-actions": "^6.4.5",
         "@storybook/addon-docs": "6.0.21",
+        "@storybook/addon-essentials": "^6.4.5",
+        "@storybook/addon-links": "^6.4.5",
+        "@storybook/addon-postcss": "^2.0.0",
+        "@storybook/builder-webpack5": "^6.4.5",
+        "@storybook/manager-webpack5": "^6.4.5",
         "@storybook/preset-create-react-app": "3.1.4",
-        "@storybook/react": "6.0.21",
+        "@storybook/react": "^6.4.5",
         "@storybook/storybook-deployer": "2.8.6",
+        "autoprefixer": "^10.2.5",
         "babel-core": "7.0.0-bridge.0",
         "babel-jest": "26.3.0",
         "babel-loader": "8.1.0",
         "babel-plugin-styled-components": "1.11.1",
+        "css-loader": "^5.2.0",
         "eslint": "7.8.1",
         "eslint-config-get-off-my-lawn": "5.0.1",
+        "eslint-plugin-storybook": "^0.5.2",
         "husky": "4.3.0",
         "jest": "26.4.2",
         "jest-haste-map": "26.3.0",
@@ -56,6 +68,7 @@
         "jest-styled-components": "7.0.3",
         "lerna": "3.22.1",
         "lint-staged": "10.3.0",
+        "postcss": "^8.2.8",
         "prettier": "2.1.1",
         "react": "16.13.1",
         "react-dom": "16.13.1",
@@ -65,6 +78,8 @@
         "stylelint-config-get-off-my-lawn": "2.0.0",
         "stylelint-config-styled-components": "0.1.1",
         "stylelint-processor-styled-components": "1.10.0",
-        "webpack": "4.44.1"
-    }
+        "tailwindcss": "^2.2.19",
+        "webpack": "^5.64.4"
+    },
+    "dependencies": {}
 }

@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+    --red: #9d0000;
+    --dark-red: #900A0A;
+    --green: #00aa51;
+    --background: #2B2A30;
+    --radius: 500px;
+}
+
+.Pomodoro-App{
+    background-color: var(--background);
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .Pomodoro-timer {
     display: flex;
     align-items: center;

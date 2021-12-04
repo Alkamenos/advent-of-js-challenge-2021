@@ -1,18 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
-  font-family: "bebas";
-  src: url('fonts/bebasneue-book-webfont.woff') format('woff'),
-  url('fonts/bebasneue-book-webfont.woff2') format('woff2');
+    font-family: "bebas";
+    src: url('public/fonts/bebasneue-book-webfont.woff') format('woff'),
+    url('public/fonts/bebasneue-book-webfont.woff2') format('woff2');
 }
 
-:root {
-  --red: #9d0000;
-  --dark-red: #900A0A;
-  --green: #00aa51;
-  --background: #2B2A30;
-  --radius: 500px;
-}
 
 * {
   margin: 0;
@@ -21,7 +16,6 @@
 }
 
 body {
-  background-color: var(--background);
   min-width: 100vw;
   min-height: 100vh;
   display: flex;

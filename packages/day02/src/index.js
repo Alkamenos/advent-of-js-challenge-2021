@@ -1,114 +1,87 @@
-import React, {useEffect, useRef, useState} from 'react';
-import settingsIcon from '../../../public/images/gear.svg';
-import dayjs from 'dayjs';
-import classnames from 'classnames';
-import '../../../public/index.css';
-import './Pomodoro.css';
+import React, {useState} from 'react';
+import './eCommerce.css';
+import MenuLayout from './layout/MenuLayout';
+import Menu from './components/Menu/Menu';
+import Cart from './components/Cart';
 
-function PomodoroTimer() {
-    const audioEl = useRef();
-    const [time, setTime] = useState(25 * 1000 * 60);
-    const [currentTime, setCurrentTime] = useState(time);
-    const [isRunning, setIsRunning] = useState(false);
-    const [isRest, setIsRest] = useState(false);
-    const [isPopupOpen, setPopupOpen] = useState(false);
-    const intervals = [
-        {isRest: true, duration: 5 * 1000 * 60},
-        {isRest: true, duration: 15 * 1000 * 60},
-        {isRest: false, duration: 25 * 1000 * 60}
-    ];
-
-    let timer;
-    const toggleRunStop = () => {
-        setIsRunning(!isRunning);
-    };
-
-    const toggleSettingsOpen = () => {
-        setPopupOpen(!isPopupOpen);
-    };
-
-    const updateTime = (interval) => () => {
-        setCurrentTime(interval.duration);
-        setIsRunning(false);
-        setIsRest(interval.isRest);
-        setTime(interval.duration);
-        setPopupOpen(false);
-    };
-
-    const startInterval = () => {
-        if (!timer) {
-            timer = setInterval(() => {
-                setCurrentTime((time) => time - 1000);
-            }, 1000);
-        }
-    };
-
-    if (isRunning && currentTime <= 0) {
-        clearInterval(timer);
-        setIsRunning(false);
-        setCurrentTime(time);
-        audioEl.current.play();
+const menuItems = [
+    {
+        name: 'French Fries with Ketchup',
+        price: 2.23,
+        image: 'plate__french-fries.png',
+        alt: 'French Fries',
+        count: 2
+    },
+    {
+        name: 'Salmon and Vegetables',
+        price: 5.12,
+        image: 'plate__salmon-vegetables.png',
+        alt: 'Salmon and Vegetables',
+        count: 0
+    },
+    {
+        name: 'Spaghetti Meat Sauce',
+        price: 7.82,
+        image: 'plate__spaghetti-meat-sauce.png',
+        alt: 'Spaghetti with Meat Sauce',
+        count: 0
+    },
+    {
+        name: 'Bacon, Eggs, and Toast',
+        price: 5.99,
+        image: 'plate__bacon-eggs.png',
+        alt: 'Bacon, Eggs, and Toast',
+        count: 0
+    },
+    {
+        name: 'Chicken Salad with Parmesan',
+        price: 6.98,
+        image: 'plate__chicken-salad.png',
+        alt: 'Chicken Salad with Parmesan',
+        count: 0
+    },
+    {
+        name: 'Fish Sticks and Fries',
+        price: 6.34,
+        image: 'plate__fish-sticks-fries.png',
+        alt: 'Fish Sticks and Fries',
+        count: 0
     }
+];
 
-    useEffect(() => {
-        console.log(isRunning);
-        if (isRunning) {
-            startInterval();
-        } else {
-            clearInterval(timer);
+function ECommerce() {
+    const [items, setItems] = useState(menuItems);
+
+    const add = (name) => {
+        const item = items.find((item) => item.name === name);
+        if (item) {
+            item.count++;
         }
-        return () => {
-            clearInterval(timer);
-        };
-    }, [isRunning]);
+        setItems([...items]);
+    };
 
-    const r = 255;
-    const progress = (currentTime / time) * 1595;
+    const remove = (name) => {
+        const item = items.find((item) => item.name === name);
+        if (item && item.count > 0) {
+            item.count--;
+        }
+        setItems([...items]);
+    };
 
     return (
-        <div className="App">
-            <div className="Pomodoro-timer">
-                <div className={classnames('Pomodoro-timer__progress', isRest ? '_green' : '_red')}>
-                    <svg height={r * 2 + 10} viewBox={`0 0 ${r * 2 + 10} ${r * 2 + 10}`} width={r * 2 + 10}>
-                        <path
-                            d={`M${r + 4} 4 a ${r} ${r} 0 0 1 0 ${r * 2} a ${r} ${r} 0 0 1 0 -${r * 2}`}
-                            strokeDasharray="1595,1595"
-                            strokeDashoffset={progress}
-                        />
-                    </svg>
-                </div>
-                <div className="Pomodoro-timer__body">
-                    <div className="Pomodoro-timer__content">
-                        <div className="Pomodoro-timer__time">{dayjs(currentTime).format('mm:ss')}</div>
-                        <div className="Pomodoro-timer__controls">
-                            <button className="Settings-button" onClick={toggleRunStop}>
-                                {isRunning ? 'stop' : 'start'}
-                            </button>
-
-                            <button className="Settings-button" onClick={toggleSettingsOpen}>
-                                <img alt="Settings" src={settingsIcon} />
-                            </button>
-                            {isPopupOpen && (
-                                <ul className="Pomodoro-timer__popup">
-                                    {intervals.map((interval) => (
-                                        <li key={interval.duration} onClick={updateTime(interval)}>
-                                            {interval.isRest ? 'Rest' : 'Work'} {dayjs(interval.duration).format('mm')}{' '}
-                                            min
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <audio src={'/sounds/alert.ogg'} ref={audioEl} />
+        <div className="eCommerce-App">
+            <MenuLayout>
+                <Menu items={items} add={add} />
+            </MenuLayout>
+            <MenuLayout>
+                <Cart items={items.filter((item) => item.count > 0)} add={add} remove={remove} />
+            </MenuLayout>
         </div>
     );
 }
 
-PomodoroTimer.propTypes = {};
+ECommerce.propTypes = {};
 
-PomodoroTimer.defaultProps = {};
+ECommerce.defaultProps = {};
 
-export default PomodoroTimer;
+export default ECommerce;
