@@ -1,0 +1,25 @@
+.Piano {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #37B2C3;
+}
+
+.WhiteKeys {
+    fill: white;
+}
+
+.WhiteKeys:hover {
+    fill: #ffd200;
+}
+
+.BlackKeys {
+    fill: black;
+}
+
+.BlackKeys:hover {
+    fill: #f40082;
+}
+
